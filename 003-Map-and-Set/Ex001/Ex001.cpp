@@ -9,7 +9,7 @@ void countOccurrences(double arr[], int n) {
         counter[arr[i]]++;
     }
 
-    for (auto const& pair : counter) {
+    for (auto const &pair: counter) {
         std::cout << pair.first << " - " << pair.second << " times" << '\n';
     }
 }

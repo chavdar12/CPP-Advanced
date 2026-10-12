@@ -2,17 +2,14 @@
 #include <string>
 #include <unordered_map>
 
-int main()
-{
+int main() {
     std::unordered_map<std::string, int> resources;
 
     std::string resource;
     int quantity;
-    while (true)
-    {
+    while (true) {
         std::cin >> resource;
-        if (resource == "stop")
-        {
+        if (resource == "stop") {
             break;
         }
         std::cin >> quantity;
@@ -20,8 +17,7 @@ int main()
         resources[resource] += quantity;
     }
 
-    for (const auto& pair : resources)
-    {
+    for (const auto &pair: resources) {
         std::cout << pair.first << " -> " << pair.second << '\n';
     }
 

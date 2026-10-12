@@ -1,31 +1,24 @@
 #include <iostream>
 
-void to_lower(char* str)
-{
-    while (*str != '\0')
-    {
-        if (*str >= 'A' && *str <= 'Z')
-        {
+void to_lower(char *str) {
+    while (*str != '\0') {
+        if (*str >= 'A' && *str <= 'Z') {
             *str = *str + 32;
         }
         ++str;
     }
 }
 
-void to_upper(char* str)
-{
-    while (*str != '\0')
-    {
-        if (*str >= 'a' && *str <= 'z')
-        {
+void to_upper(char *str) {
+    while (*str != '\0') {
+        if (*str >= 'a' && *str <= 'z') {
             *str = *str - 32;
         }
         ++str;
     }
 }
 
-int main()
-{
+int main() {
     constexpr int max_len = 1000;
     char str[max_len];
 

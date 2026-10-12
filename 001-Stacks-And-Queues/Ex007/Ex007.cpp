@@ -2,23 +2,19 @@
 #include <queue>
 #include <string>
 
-int main()
-{
+int main() {
     std::queue<std::string> children;
     int n;
     std::string name;
 
-    while (std::cin >> name)
-    {
+    while (std::cin >> name) {
         children.push(name);
     }
 
     std::cin >> n;
 
-    while (children.size() > 1)
-    {
-        for (int i = 0; i < n - 1; ++i)
-        {
+    while (children.size() > 1) {
+        for (int i = 0; i < n - 1; ++i) {
             std::string front_child = children.front();
             children.pop();
             children.push(front_child);

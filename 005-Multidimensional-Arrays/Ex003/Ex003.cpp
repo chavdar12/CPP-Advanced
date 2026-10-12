@@ -1,14 +1,12 @@
 #include <iostream>
 #include <vector>
 
-int main()
-{
+int main() {
     int n;
     std::cin >> n;
 
     std::vector<std::string> matrix(n);
-    for (int i = 0; i < n; ++i)
-    {
+    for (int i = 0; i < n; ++i) {
         std::cin >> matrix[i];
     }
 
@@ -18,30 +16,23 @@ int main()
     bool found = false;
     int row, col;
 
-    for (int i = 0; i < n; ++i)
-    {
-        for (int j = 0; j < matrix[i].size(); ++j)
-        {
-            if (matrix[i][j] == symbol)
-            {
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < matrix[i].size(); ++j) {
+            if (matrix[i][j] == symbol) {
                 row = i + 1;
                 col = j + 1;
                 found = true;
                 break;
             }
         }
-        if (found)
-        {
+        if (found) {
             break;
         }
     }
 
-    if (found)
-    {
+    if (found) {
         std::cout << "(" << row << ", " << col << ")" << '\n';
-    }
-    else
-    {
+    } else {
         std::cout << symbol << " does not occur in the matrix" << '\n';
     }
 

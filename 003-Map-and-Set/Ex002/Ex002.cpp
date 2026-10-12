@@ -4,13 +4,11 @@
 #include <vector>
 #include <sstream>
 
-struct student
-{
+struct student {
     std::vector<double> grades;
 };
 
-int main()
-{
+int main() {
     int num_records;
     std::cout << "Enter the number of records: ";
     std::cin >> num_records;
@@ -18,8 +16,7 @@ int main()
 
     std::map<std::string, student> student_records;
 
-    for (int i = 0; i < num_records; ++i)
-    {
+    for (int i = 0; i < num_records; ++i) {
         std::string line;
         std::cout << "Enter student name and grade (separated by space): ";
         std::getline(std::cin, line);
@@ -34,17 +31,14 @@ int main()
     }
 
     std::cout << std::fixed << std::setprecision(2);
-    for (const auto& record : student_records)
-    {
+    for (const auto &record: student_records) {
         std::cout << record.first << " -> ";
-        for (const auto& grade : record.second.grades)
-        {
+        for (const auto &grade: record.second.grades) {
             std::cout << grade << " ";
         }
 
         double total = 0;
-        for (const auto& grade : record.second.grades)
-        {
+        for (const auto &grade: record.second.grades) {
             total += grade;
         }
 

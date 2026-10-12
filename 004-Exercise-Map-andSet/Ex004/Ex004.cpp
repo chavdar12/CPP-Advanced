@@ -3,8 +3,7 @@
 #include <set>
 #include <algorithm>
 
-int main()
-{
+int main() {
     std::string text;
     std::getline(std::cin, text);
 
@@ -13,19 +12,15 @@ int main()
     std::stringstream ss(text);
     std::string word;
     std::set<std::string> short_words;
-    while (ss >> word)
-    {
-        if (word.size() < 5)
-        {
+    while (ss >> word) {
+        if (word.size() < 5) {
             short_words.insert(word);
         }
     }
 
-    for (auto it = short_words.begin(); it != short_words.end(); ++it)
-    {
+    for (auto it = short_words.begin(); it != short_words.end(); ++it) {
         std::cout << *it;
-        if (std::next(it) != short_words.end())
-        {
+        if (std::next(it) != short_words.end()) {
             std::cout << ", ";
         }
     }

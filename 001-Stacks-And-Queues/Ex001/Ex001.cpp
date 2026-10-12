@@ -2,7 +2,7 @@
 #include <string>
 #include <sstream>
 
-std::string reverse_string(const std::string& str) {
+std::string reverse_string(const std::string &str) {
     std::string reversed;
     std::istringstream iss(str);
     std::string word;

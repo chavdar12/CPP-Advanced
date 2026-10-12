@@ -2,14 +2,12 @@
 #include <string>
 #include <unordered_map>
 
-int main()
-{
+int main() {
     std::unordered_map<int, std::string> companies;
 
     std::string name;
     int id;
-    while (std::cin >> name >> id && name != "end")
-    {
+    while (std::cin >> name >> id && name != "end") {
         companies[id] = name;
     }
 
@@ -17,12 +15,9 @@ int main()
     std::cin >> search_id;
 
     const auto it = companies.find(search_id);
-    if (it != companies.end())
-    {
+    if (it != companies.end()) {
         std::cout << it->second << " " << it->first << '\n';
-    }
-    else
-    {
+    } else {
         std::cout << "[not found]" << '\n';
     }
 

@@ -5,7 +5,7 @@
 int main() {
     std::queue<std::string> customers;
     std::string input;
-    
+
     while (true) {
         std::cin >> input;
         if (input == "End") {

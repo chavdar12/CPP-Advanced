@@ -4,8 +4,7 @@
 #include <vector>
 #include <algorithm>
 
-int main()
-{
+int main() {
     std::string line;
     std::getline(std::cin, line);
 
@@ -14,24 +13,19 @@ int main()
     std::istringstream iss(line);
     std::string word;
     std::unordered_map<std::string, int> wordCount;
-    while (iss >> word)
-    {
+    while (iss >> word) {
         wordCount[word]++;
     }
 
     std::vector<std::string> odd_occurrences;
-    for (const auto& pair : wordCount)
-    {
-        if (pair.second % 2 != 0)
-        {
+    for (const auto &pair: wordCount) {
+        if (pair.second % 2 != 0) {
             odd_occurrences.push_back(pair.first);
         }
     }
 
-    for (size_t i = 0; i < odd_occurrences.size(); ++i)
-    {
-        if (i > 0)
-        {
+    for (size_t i = 0; i < odd_occurrences.size(); ++i) {
+        if (i > 0) {
             std::cout << ", ";
         }
         std::cout << odd_occurrences[i];

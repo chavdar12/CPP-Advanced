@@ -1,24 +1,23 @@
 #include <iostream>
 #include <string>
 #include <unordered_map>
+#include <vector>
 
 int main() {
     std::unordered_map<std::string, int> resources;
 
     std::string resource;
     int quantity;
-    while (true) {
-        std::cin >> resource;
-        if (resource == "stop") {
-            break;
+    std::vector<std::string> order;
+    while (std::cin >> resource && resource != "stop" && std::cin >> quantity) {
+        if (resources.count(resource) == 0) {
+            order.push_back(resource);
         }
-        std::cin >> quantity;
-
         resources[resource] += quantity;
     }
 
-    for (const auto &pair: resources) {
-        std::cout << pair.first << " -> " << pair.second << '\n';
+    for (const auto &name: order) {
+        std::cout << name << " -> " << resources[name] << '\n';
     }
 
     return 0;

@@ -8,7 +8,7 @@ void print_sub_expressions(const std::string &expression) {
     for (int i = 0; i < expression.size(); ++i) {
         if (expression[i] == '(') {
             opening_brackets.push(i);
-        } else if (expression[i] == ')') {
+        } else if (expression[i] == ')' && !opening_brackets.empty()) {
             const int start = opening_brackets.top();
             opening_brackets.pop();
             std::cout << expression.substr(start, i - start + 1) << '\n';

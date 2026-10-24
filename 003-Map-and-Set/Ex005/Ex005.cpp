@@ -7,11 +7,7 @@ int main() {
     std::unordered_set<std::string> cars;
 
     std::string input;
-    while (true) {
-        std::getline(std::cin, input);
-        if (input == "END") {
-            break;
-        }
+    while (std::getline(std::cin, input) && input != "END") {
 
         std::istringstream iss(input);
         std::string direction, car_number;

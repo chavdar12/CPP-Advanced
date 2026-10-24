@@ -1,3 +1,4 @@
+#include <cstring>
 #include <iostream>
 
 void to_lower(char *str) {

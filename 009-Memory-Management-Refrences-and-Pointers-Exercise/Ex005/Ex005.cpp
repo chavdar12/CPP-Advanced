@@ -19,14 +19,14 @@ int main() {
     int mat2[max_rows][max_cols];
     int rows1, rows2, cols1, cols2;
 
-    std::cin >> rows1;
+    std::cin >> rows1 >> cols1;
     for (int i = 0; i < rows1; ++i) {
         for (int j = 0; j < cols1; ++j) {
             std::cin >> mat1[i][j];
         }
     }
 
-    std::cin >> rows2;
+    std::cin >> rows2 >> cols2;
     for (int i = 0; i < rows2; ++i) {
         for (int j = 0; j < cols2; ++j) {
             std::cin >> mat2[i][j];

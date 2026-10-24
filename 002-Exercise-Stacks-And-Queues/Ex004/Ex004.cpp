@@ -16,25 +16,23 @@ int main() {
         }
     }
 
-    while (!orders.empty()) {
-        const int current_order = orders.front();
-        orders.pop();
+    std::cout << max_order << '\n';
 
-        if (food_quantity >= current_order) {
-            food_quantity -= current_order;
-        } else {
-            std::cout << "Orders left:";
-            while (!orders.empty()) {
-                std::cout << " " << orders.front();
-                orders.pop();
-            }
-            std::cout << '\n';
-            return 0;
-        }
+    while (!orders.empty() && food_quantity >= orders.front()) {
+        food_quantity -= orders.front();
+        orders.pop();
     }
 
-    std::cout << max_order << '\n';
-    std::cout << "Orders complete" << '\n';
+    if (orders.empty()) {
+        std::cout << "Orders complete" << '\n';
+    } else {
+        std::cout << "Orders left:";
+        while (!orders.empty()) {
+            std::cout << " " << orders.front();
+            orders.pop();
+        }
+        std::cout << '\n';
+    }
 
     return 0;
 }

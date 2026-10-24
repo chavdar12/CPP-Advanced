@@ -22,9 +22,10 @@ std::string is_balanced(const std::string &expression) {
 }
 
 int main() {
-    std::cout << is_balanced("{[()]}") << '\n';
-    std::cout << is_balanced("{[(])}") << '\n';
-    std::cout << is_balanced("{{[[(())]]}}") << '\n';
+    std::string line;
+    while (std::getline(std::cin, line)) {
+        std::cout << is_balanced(line) << '\n';
+    }
 
     return 0;
 }

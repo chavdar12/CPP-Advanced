@@ -10,13 +10,13 @@ int main() {
 
     try {
         num1 = std::stoi(input1);
-    } catch (const std::invalid_argument &) {
+    } catch (const std::logic_error &) {
         parse1 = false;
     }
 
     try {
         num2 = std::stoi(input2);
-    } catch (const std::invalid_argument &) {
+    } catch (const std::logic_error &) {
         parse2 = false;
     }
 

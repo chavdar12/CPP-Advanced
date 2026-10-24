@@ -13,14 +13,17 @@ int main() {
     std::istringstream iss(line);
     std::string word;
     std::unordered_map<std::string, int> wordCount;
+    std::vector<std::string> order;
     while (iss >> word) {
-        wordCount[word]++;
+        if (wordCount[word]++ == 0) {
+            order.push_back(word);
+        }
     }
 
     std::vector<std::string> odd_occurrences;
-    for (const auto &pair: wordCount) {
-        if (pair.second % 2 != 0) {
-            odd_occurrences.push_back(pair.first);
+    for (const auto &w: order) {
+        if (wordCount[w] % 2 != 0) {
+            odd_occurrences.push_back(w);
         }
     }
 

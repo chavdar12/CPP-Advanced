@@ -4,11 +4,8 @@
 void reverse_diagonals(std::vector<std::vector<int> > &matrix) {
     const int n = matrix.size();
     for (int i = 0; i < n / 2; ++i) {
-        for (int j = 0; j < n / 2; ++j) {
-            if (i != j && i + j != n - 1) {
-                std::swap(matrix[i][j], matrix[n - 1 - i][n - 1 - j]);
-            }
-        }
+        std::swap(matrix[i][i], matrix[n - 1 - i][n - 1 - i]);
+        std::swap(matrix[i][n - 1 - i], matrix[n - 1 - i][i]);
     }
 }
 

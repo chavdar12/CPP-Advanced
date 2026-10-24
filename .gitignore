@@ -38,3 +38,5 @@ _deps/
 
 # macOS
 .DS_Store
+# expected test outputs are source, not build artifacts
+!**/tests/*.out

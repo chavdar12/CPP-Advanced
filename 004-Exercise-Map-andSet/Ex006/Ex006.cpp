@@ -13,6 +13,9 @@ int main() {
 
     std::vector<int> squares;
     for (int x: numbers) {
+        if (x < 0) {
+            continue;
+        }
         const int root = std::sqrt(x);
         if (root * root == x) {
             squares.push_back(x);

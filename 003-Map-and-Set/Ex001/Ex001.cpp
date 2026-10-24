@@ -1,6 +1,6 @@
 #include <iostream>
 #include <map>
-#include <sstream>
+#include <vector>
 
 void countOccurrences(double arr[], int n) {
     std::map<double, int> counter;
@@ -19,13 +19,13 @@ int main() {
     std::cout << "Enter the number of elements: ";
     std::cin >> n;
 
-    double arr[n];
+    std::vector<double> arr(n);
     std::cout << "Enter the elements separated by spaces: ";
     for (int i = 0; i < n; ++i) {
         std::cin >> arr[i];
     }
 
-    countOccurrences(arr, n);
+    countOccurrences(arr.data(), n);
 
     return 0;
 }

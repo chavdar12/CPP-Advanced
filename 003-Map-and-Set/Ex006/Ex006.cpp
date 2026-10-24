@@ -10,11 +10,9 @@ int main() {
     for (int i = 0; i < n; ++i) {
         std::string username;
         std::cin >> username;
-        unique_usernames.insert(username);
-    }
-
-    for (const auto &username: unique_usernames) {
-        std::cout << username << '\n';
+        if (unique_usernames.insert(username).second) {
+            std::cout << username << '\n';
+        }
     }
 
     return 0;

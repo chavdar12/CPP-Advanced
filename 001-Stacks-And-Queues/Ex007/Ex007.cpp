@@ -1,5 +1,6 @@
 #include <iostream>
 #include <queue>
+#include <sstream>
 #include <string>
 
 int main() {
@@ -7,11 +8,18 @@ int main() {
     int n;
     std::string name;
 
-    while (std::cin >> name) {
+    std::string line;
+    std::getline(std::cin, line);
+    std::istringstream iss(line);
+    while (iss >> name) {
         children.push(name);
     }
 
     std::cin >> n;
+
+    if (children.empty() || n < 1) {
+        return 0;
+    }
 
     while (children.size() > 1) {
         for (int i = 0; i < n - 1; ++i) {
